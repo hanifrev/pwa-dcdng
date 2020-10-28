@@ -1,4 +1,4 @@
-const CACHE_NAME = "opethevo-v7";
+const CACHE_NAME = "opethevo-v9.3";
 const urlsToCache = [
   "/",
   "/nav.html",
@@ -6,8 +6,8 @@ const urlsToCache = [
   "/icon.png",
   "/manifest.json",
   "/sw-register.js",
-  "/assets/dates_flyer.jpg",
-  "/assets/home_flyer.jpg",
+  "/assets/dates_flyer.jpg?lastmod=123",
+  "/assets/home_flyer.jpg?lastmod=123",
   "/pages/home.html",
   "/pages/about.html",
   "/pages/setlist.html",
