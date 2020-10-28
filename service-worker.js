@@ -1,8 +1,13 @@
-const CACHE_NAME = "opethevo-v4";
-var urlsToCache = [
+const CACHE_NAME = "opethevo-v7";
+const urlsToCache = [
   "/",
   "/nav.html",
   "/index.html",
+  "/icon.png",
+  "/manifest.json",
+  "/sw-register.js",
+  "/assets/dates_flyer.jpg",
+  "/assets/home_flyer.jpg",
   "/pages/home.html",
   "/pages/about.html",
   "/pages/setlist.html",
@@ -13,7 +18,7 @@ var urlsToCache = [
   "/js/nav.js",
 ];
 
-self.addEventListener("install", function (event) {
+self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll(urlsToCache);
@@ -21,7 +26,7 @@ self.addEventListener("install", function (event) {
   );
 });
 
-self.addEventListener("fetch", function (event) {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches
       .match(event.request, { cacheName: CACHE_NAME })
@@ -40,7 +45,7 @@ self.addEventListener("fetch", function (event) {
   );
 });
 
-self.addEventListener("activate", function (event) {
+self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then(function (cacheNames) {
       return Promise.all(
